@@ -114,7 +114,6 @@ public class RabbitClient {
 		container.setQueues(orderQueue);
 		container.setMessageListener(new MessageListener() {
 			
-			@Override
 			public void onMessage(Message message) {
 				OrderController.registerOrder(Order.fromBytes(message.getBody()));
 			}
@@ -131,7 +130,6 @@ public class RabbitClient {
 		container.setQueues(orderProcQueue);
 		container.setMessageListener(new MessageListener() {
 			
-			@Override
 			public void onMessage(Message message) {
 				//for now simply log the order
 				Order order = Order.fromBytes(message.getBody());

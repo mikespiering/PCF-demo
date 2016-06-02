@@ -16,7 +16,6 @@ public class OrderGenerator implements Runnable {
 		this.generating = false;
 	}
 	
-	@Override
 	public void run() {
 
 		RabbitClient client = RabbitClient.getInstance();
